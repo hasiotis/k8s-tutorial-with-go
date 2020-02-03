@@ -2,7 +2,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: tutorial
+  name: tutorial-deployment
   namespace: tutorial
 spec:
   replicas: 1

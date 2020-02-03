@@ -9,12 +9,12 @@ $ stern -h
 Apply, Get, describe. You can run get and describe on any kubernetes object.
 But you can also try edit!
 ```
-$ kubectl edit deployment tutorial-deployment
+kubectl edit deployment tutorial-deployment
 ```
 
 Try to point to a non existent docker image, and then:
 ```
-$ kubectl describe pod <PODNAME>
+kubectl describe pod <PODNAME>
 ```
 
 Make a new docker image, this time starting from alpine:
@@ -33,5 +33,5 @@ http EXTERNAL_IP
 
 Now we can get an interactive shell into the running container:
 ```
-$ kubectl exec -it <PODNAME> -- sh
+kubectl exec -it <PODNAME> -- sh
 ```
