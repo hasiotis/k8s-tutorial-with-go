@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: train-model
+  name: tutorial-train-model
   namespace: tutorial
 spec:
   backoffLimit: 2
