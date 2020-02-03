@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: tutorial-reset-cache
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: main
+              image: busybox
+              command: ["wget", "-O", "-", "http://tutorial-service/reset"]
+          restartPolicy: OnFailure
