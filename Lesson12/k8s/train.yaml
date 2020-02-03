@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: train-model
+  namespace: tutorial
+spec:
+  backoffLimit: 2
+  activeDeadlineSeconds: 100
+  template:
+    spec:
+      containers:
+      - name: main
+        image: ${DOCKER_REGISTRY}/tutorial:v0.0.10
+        command: ["sh", "-c", "echo -n model trained > /dump.txt"]
+      restartPolicy: Never

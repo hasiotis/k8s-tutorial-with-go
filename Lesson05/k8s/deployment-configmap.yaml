@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: tutorial-deployment
+  namespace: tutorial
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: tutorial
+    spec:
+      containers:
+      - name: tutorial
+        image: ${DOCKER_REGISTRY}/tutorial:v0.0.5
+        envFrom:
+         - configMapRef:
+             name: tutorial-config
