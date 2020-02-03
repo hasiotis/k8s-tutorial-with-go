@@ -9,11 +9,11 @@ docker push ${DOCKER_REGISTRY}/tutorial:v0.0.11
 
 Enable the cronjob
 ```
-$ kubectl apply -f k8s/cronjob.yaml
+kubectl apply -f k8s/cronjob.yaml
 ```
 
 Check what happened:
 ```
-$ kubectl get cronjobs.batch reset-cache
-$ kubectl get pod
+kubectl get cronjobs.batch reset-cache
+kubectl get pod
 ```
