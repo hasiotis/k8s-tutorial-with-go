@@ -10,6 +10,6 @@ spec:
     spec:
       containers:
       - name: main
-        image: ${DOCKER_REGISTRY}/tutorial:v0.0.10
+        image: ${DOCKER_REGISTRY}/tutorial:v0.0.11
         command: ["sh", "-c", "echo -n model trained > /dump.txt"]
       restartPolicy: Never

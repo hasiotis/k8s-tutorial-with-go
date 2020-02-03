@@ -1,22 +1,25 @@
-## Lesson 10: Tips and tricks
+## Lesson 10: Managing state
 
-Create and push a docker images of our application:
+So far we had completely stateless apps. Let's try something else:
 ```
 CGO_ENABLED=0 go build tutorial.go
 docker build -t ${DOCKER_REGISTRY}/tutorial:v0.0.10 .
 docker push ${DOCKER_REGISTRY}/tutorial:v0.0.10
 ```
 
-Redeploy to our kubernetes cluster:
+Get URL: http://_EXTERNALIP_/get
+Set URL: http://_EXTERNALIP_/set/myvalue
+
+Here is how we can deal with this problem:
+
 ```
-kubectl apply -f k8s/deployment.yaml
-kubectl rollout status deployment tutorial-deployment
-http EXTERNAL_IP
+$ kubectl apply -f k8s/pv.yaml
+$ kubectl apply -f k8s/deployment-volume.yaml
 ```
 
-Redeploy to our kubernetes cluster:
+Check that you have a disk
 ```
-kubectl apply -f k8s/deployment-volume.yaml
-kubectl rollout status deployment tutorial-deployment
-http EXTERNAL_IP
+$ kubectl exec -it <PODNAME> -- sh
+$ df -h /data
+$ ls -l /data
 ```

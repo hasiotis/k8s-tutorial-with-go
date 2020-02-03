@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: tutorial
-        image: tutorial:v0.0.0
+        image: ${DOCKER_REGISTRY}/tutorial:v0.0.13
         envFrom:
         - configMapRef:
             name: tutorial-config

@@ -7,6 +7,9 @@ docker build -t ${DOCKER_REGISTRY}/tutorial:v0.0.6 .
 docker push ${DOCKER_REGISTRY}/tutorial:v0.0.6
 ```
 
+Now try to set TUTORIAL_REMOTE to point to somewhere else.
+You may even try http://tutorial
+
 Redeploy to our kubernetes cluster:
 ```
 kubectl apply -f k8s/configmap.yaml

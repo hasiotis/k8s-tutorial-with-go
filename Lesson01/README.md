@@ -38,11 +38,6 @@ curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
 chmod +x ./kubens
 sudo mv ./kubens /usr/local/bin/kubens
 
-# kustomize
-export URL=`http https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest | jq -r '.assets[] | select(.name | contains("linux")).browser_download_url'`
-wget -q $URL
-tar xvf kustomize_*_linux_amd64.tar.gz -C ~/.local/bin
-
 # stern
 export URL=`http https://api.github.com/repos/wercker/stern/releases/latest | jq -r '.assets[] | select(.name | contains("linux")).browser_download_url'`
 wget -q $URL

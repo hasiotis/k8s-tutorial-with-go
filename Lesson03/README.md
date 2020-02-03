@@ -3,11 +3,11 @@
 Make sure we authenticate to docker registry:
 ```
 gcloud auth configure-docker
+export DOCKER_REGISTRY="gcr.io/${PROJECT_ID}"
 ```
 
 Create and push a docker images of our application:
 ```
-export DOCKER_REGISTRY="gcr.io/${PROJECT_ID}"
 CGO_ENABLED=0 go build tutorial.go
 docker build -t ${DOCKER_REGISTRY}/tutorial:v0.0.3 .
 docker push ${DOCKER_REGISTRY}/tutorial:v0.0.3

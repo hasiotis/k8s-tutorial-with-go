@@ -15,10 +15,9 @@ What happened?
 ```
 kubectl get pod
 kubectl get pod -o wide
-curl http://POD_IP
 ```
 
-What if we have two of them?
+What if we need two of them?
 ```
 kubectl scale deployment --replicas=2 nginx
 kubectl get pod -o wide
