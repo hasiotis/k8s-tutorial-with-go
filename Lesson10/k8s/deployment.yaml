@@ -21,7 +21,7 @@ spec:
         - name: TUTORIAL_SECRET
           valueFrom:
             secretKeyRef:
-              name: secret
+              name: tutorial-secret
               key: secret
         readinessProbe:
           httpGet:
